@@ -51,4 +51,28 @@ public class BishopBlackTest {
                 is(resultBishop)
         );
     }
+
+    @Test
+    public void bishopWayBlackG2() {
+        BishopBlack bishop = new BishopBlack(G2);
+        bishop.way(C6);
+        Cell[] result = bishop.way(C6);
+        Cell[] resultBishop ={F3, E4, D5, C6};
+
+        assertThat(
+                result,
+                is(resultBishop)
+        );
+    }
+
+    @Test
+    public void whenIsDiagonal() {
+        BishopBlack bishop = new BishopBlack(G2);
+        boolean result = bishop.isDiagonal(G2, C6);
+        assertThat(
+                result,
+                is(true)
+        );
+    }
+
 }
